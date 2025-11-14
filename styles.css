@@ -1,4 +1,4 @@
-/* Base */
+/* ---------- Root + base ---------- */
 :root {
     --red: #c81d25;
     --dark-red: #8d151b;
@@ -14,6 +14,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -22,7 +26,8 @@ body {
     line-height: 1.5;
 }
 
-/* Layout helpers */
+/* ---------- Layout helpers ---------- */
+
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -60,7 +65,8 @@ body {
     gap: 2rem;
 }
 
-/* Header */
+/* ---------- Header & nav ---------- */
+
 .site-header {
     border-bottom: 3px solid var(--red);
     background: #fff;
@@ -103,21 +109,42 @@ body {
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+    position: relative;
 }
 
-.main-nav a:hover,
+/* underline hover effect */
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.3rem;
+    width: 0;
+    height: 2px;
+    background: var(--red);
+    transition: width 0.25s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    width: 100%;
+}
+
 .main-nav a.active {
     color: var(--red);
 }
 
-/* Hero */
+/* ---------- Hero ---------- */
+
 .hero {
     position: relative;
     min-height: 60vh;
-    background: url("images/bakery-hero.jpg") center/cover no-repeat;
+    background: linear-gradient(135deg, #9f9f9f, #c3c3c3);
+    /* replace with image if you want */
     color: #fff;
     display: flex;
     align-items: center;
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-overlay {
@@ -146,7 +173,14 @@ body {
     margin-right: 0.75rem;
 }
 
-/* Buttons */
+/* subtle parallax shift on hover */
+.hero:hover {
+    background-position: center 48%;
+    transition: background-position 1s ease;
+}
+
+/* ---------- Buttons ---------- */
+
 .btn {
     display: inline-block;
     padding: 0.7rem 1.4rem;
@@ -156,6 +190,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.08em;
     border: 2px solid var(--red);
+    cursor: pointer;
 }
 
 .btn.primary {
@@ -166,6 +201,7 @@ body {
 .btn.primary:hover {
     background: var(--dark-red);
     border-color: var(--dark-red);
+    transform: translateY(-2px);
 }
 
 .btn.outline {
@@ -175,9 +211,11 @@ body {
 
 .btn.outline:hover {
     background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
 
-/* Info strip */
+/* ---------- Info strip ---------- */
+
 .info-strip {
     background: var(--red);
     color: #fff;
@@ -202,29 +240,24 @@ body {
     font-size: 0.9rem;
 }
 
-/* Cards */
+/* make phone link white */
+.info-strip a {
+    color: #fff !important;
+    text-decoration: underline;
+}
+
+/* ---------- Cards ---------- */
+
 .card {
     border: 1px solid #eee;
     border-radius: 0.75rem;
     padding: 1.5rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+    background: #fff;
 }
 
-.card h2 {
-    margin-top: 0;
-}
+/* ---------- Gallery ---------- */
 
-.card-link {
-    color: var(--red);
-    font-size: 0.9rem;
-    text-decoration: none;
-}
-
-.card-link:hover {
-    text-decoration: underline;
-}
-
-/* Gallery placeholder */
 .gallery {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -243,7 +276,8 @@ body {
     font-size: 0.9rem;
 }
 
-/* Page headers */
+/* ---------- Page hero ---------- */
+
 .page-hero {
     background: var(--bg-soft);
     padding: 2.5rem 0;
@@ -254,7 +288,8 @@ body {
     margin: 0 0 0.5rem;
 }
 
-/* Menu lists */
+/* ---------- Menu lists & hours ---------- */
+
 .menu-list {
     list-style: none;
     padding: 0;
@@ -287,7 +322,8 @@ body {
     background: #fafafa;
 }
 
-/* Footer */
+/* ---------- Footer ---------- */
+
 .site-footer {
     border-top: 2px solid #f0d2d2;
     padding: 1.5rem 0;
@@ -299,6 +335,7 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .small {
@@ -311,25 +348,105 @@ body {
     text-decoration: none;
 }
 
-/* Responsive */
-@media (max-width: 800px) {
+/* ---------- Global hover/transition polish ---------- */
+
+.card,
+.gallery-item,
+.btn,
+.main-nav a {
+    transition: all 0.25s ease;
+}
+
+/* card: lift on hover */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* gallery items: zoom + color */
+.gallery-item:hover {
+    transform: scale(1.05);
+    border-color: var(--red);
+    color: var(--red);
+}
+
+/* nav hover fade */
+.main-nav a:hover {
+    opacity: 0.8;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
     .header-inner {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
+        gap: 0.4rem;
     }
 
     .main-nav {
-        margin-top: 0.5rem;
+        margin-top: 0.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
     }
 
-    .info-strip-inner,
+    .main-nav a {
+        margin-left: 0;
+    }
+
+    .hero {
+        min-height: 45vh;
+        background-position: center;
+    }
+
+    .hero-content {
+        padding: 2rem 0;
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons .btn {
+        margin: 0.4rem 0.3rem;
+    }
+
+    .info-strip-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
     .grid-2,
     .grid-3,
     .gallery {
         grid-template-columns: 1fr;
     }
 
-    .hero {
-        min-height: 55vh;
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    .hours-table {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .section {
+        padding: 2.25rem 0;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
     }
 }
