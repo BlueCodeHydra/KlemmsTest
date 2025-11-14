@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Menu | Klemm's Bakery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-main">Klemm's</span>
+                <span class="logo-sub">Bakery</span>
+            </a>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="store.html">Store Info</a>
+                <a href="menu.html" class="active">Menu</a>
+                <a href="cakes.html">Cakes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Menu</h1>
+                <p>Everyday favorites and classic bakery items.</p>
+            </div>
+        </section>
+
+        <section class="section" id="donuts">
+            <div class="container grid-2">
+                <div>
+                    <h2>Donuts</h2>
+                    <ul class="menu-list">
+                        <li><span>Glazed</span><span>$</span></li>
+                        <li><span>Chocolate Frosted</span><span>$</span></li>
+                        <li><span>Boston Creme</span><span>$</span></li>
+                        <li><span>Jelly</span><span>$</span></li>
+                        <li><span>Seasonal Specials</span><span>Ask</span></li>
+                    </ul>
+                    <p class="small">Prices may vary. Add exact pricing later.</p>
+                </div>
+                <div>
+                    <h2>Pastries</h2>
+                    <ul class="menu-list">
+                        <li><span>Muffins</span><span>$</span></li>
+                        <li><span>Croissants</span><span>$</span></li>
+                        <li><span>Danish</span><span>$</span></li>
+                        <li><span>Turnovers</span><span>$</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section soft-bg">
+            <div class="container grid-2">
+                <div>
+                    <h2>Breads & Rolls</h2>
+                    <ul class="menu-list">
+                        <li><span>Fresh Bread Loaves</span><span>$</span></li>
+                        <li><span>Bulkie Rolls</span><span>$</span></li>
+                        <li><span>Dinner Rolls</span><span>$</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Drinks</h2>
+                    <ul class="menu-list">
+                        <li><span>Coffee</span><span>$</span></li>
+                        <li><span>Tea</span><span>$</span></li>
+                        <li><span>Cold Drinks</span><span>$</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>Looking for cakes?</h2>
+                <p>Visit our <a href="cakes.html">cakes page</a> for custom cake options and ideas.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <h4>Klemm's Bakery</h4>
+            </div>
+            <div>
+                <p class="small">© <span id="year">2025</span> Klemm's Bakery.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

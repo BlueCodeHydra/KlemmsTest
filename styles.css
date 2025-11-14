@@ -1,0 +1,335 @@
+/* Base */
+:root {
+    --red: #c81d25;
+    --dark-red: #8d151b;
+    --bg-soft: #fff5f5;
+    --text-main: #222;
+    --text-muted: #666;
+    --max-width: 1100px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text-main);
+    background: #ffffff;
+    line-height: 1.5;
+}
+
+/* Layout helpers */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.section {
+    padding: 3rem 0;
+}
+
+.section.soft-bg {
+    background: var(--bg-soft);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.section-intro {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+/* Header */
+.site-header {
+    border-bottom: 3px solid var(--red);
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+}
+
+.logo {
+    text-decoration: none;
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+}
+
+.logo-main {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.logo-sub {
+    font-size: 0.8rem;
+    color: var(--red);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.main-nav a {
+    margin-left: 1.25rem;
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--red);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    min-height: 60vh;
+    background: url("images/bakery-hero.jpg") center/cover no-repeat;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.25));
+}
+
+.hero-content {
+    position: relative;
+    padding: 4rem 0;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    max-width: 30rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-buttons .btn {
+    margin-right: 0.75rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: 2px solid var(--red);
+}
+
+.btn.primary {
+    background: var(--red);
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background: var(--dark-red);
+    border-color: var(--dark-red);
+}
+
+.btn.outline {
+    background: transparent;
+    color: #fff;
+}
+
+.btn.outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Info strip */
+.info-strip {
+    background: var(--red);
+    color: #fff;
+    padding: 1.5rem 0;
+}
+
+.info-strip-inner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.info-strip h3 {
+    margin: 0 0 0.2rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.info-strip p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Cards */
+.card {
+    border: 1px solid #eee;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.card-link {
+    color: var(--red);
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+/* Gallery placeholder */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.gallery-item {
+    background: #fff;
+    border-radius: 0.75rem;
+    border: 1px dashed #ddd;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Page headers */
+.page-hero {
+    background: var(--bg-soft);
+    padding: 2.5rem 0;
+    border-bottom: 2px solid #f0d2d2;
+}
+
+.page-hero h1 {
+    margin: 0 0 0.5rem;
+}
+
+/* Menu lists */
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+}
+
+.menu-list li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #eee;
+    padding: 0.35rem 0;
+    font-size: 0.95rem;
+}
+
+.menu-list li span:last-child {
+    color: var(--text-muted);
+}
+
+.hours-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.hours-table td {
+    padding: 0.3rem 0.4rem;
+}
+
+.hours-table tr:nth-child(odd) {
+    background: #fafafa;
+}
+
+/* Footer */
+.site-footer {
+    border-top: 2px solid #f0d2d2;
+    padding: 1.5rem 0;
+    background: #fff;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.small {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.site-footer a {
+    color: var(--red);
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-nav {
+        margin-top: 0.5rem;
+    }
+
+    .info-strip-inner,
+    .grid-2,
+    .grid-3,
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 55vh;
+    }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Cakes | Klemm's Bakery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-main">Klemm's</span>
+                <span class="logo-sub">Bakery</span>
+            </a>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="store.html">Store Info</a>
+                <a href="menu.html">Menu</a>
+                <a href="cakes.html" class="active">Cakes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Cakes & Special Orders</h1>
+                <p>From birthdays to weddings, we’ve got your celebration covered.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container grid-2">
+                <div>
+                    <h2>Popular Cake Styles</h2>
+                    <ul class="menu-list">
+                        <li>Birthday cakes</li>
+                        <li>Sheet cakes</li>
+                        <li>Layer cakes</li>
+                        <li>Specialty themed cakes</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Flavors & Fillings</h2>
+                    <p>Use this section to list common flavors: vanilla, chocolate, marble, red velvet, etc., plus
+                        buttercream, whipped cream, fruit fillings, and more.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section soft-bg">
+            <div class="container grid-2">
+                <div>
+                    <h2>How to Order</h2>
+                    <p>Call us at <a href="tel:16034378810">(603) 437-8810</a> or stop by the shop to talk through
+                        sizes, flavors, and decorations. For larger or more detailed cakes, we recommend ordering
+                        several days in advance.</p>
+                </div>
+                <div>
+                    <h2>Inspiration Gallery</h2>
+                    <p>Add photos of past cakes here later. For now you can mention that customers can check Facebook
+                        for more examples:</p>
+                    <p><a href="https://www.facebook.com/klemmsbakery" target="_blank" rel="noopener">View cakes on
+                            Facebook →</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <h4>Klemm's Bakery</h4>
+            </div>
+            <div>
+                <p class="small">© <span id="year">2025</span> Klemm's Bakery.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

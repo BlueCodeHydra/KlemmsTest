@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Klemm's Bakery | Windham, NH</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-main">Klemm's</span>
+                <span class="logo-sub">Bakery</span>
+            </a>
+            <nav class="main-nav">
+                <a href="index.html" class="active">Home</a>
+                <a href="store.html">Store Info</a>
+                <a href="menu.html">Menu</a>
+                <a href="cakes.html">Cakes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1>Busy bakery. Big flavors.</h1>
+                <p>Donuts, cakes, and pastries baked fresh daily in Windham, NH.</p>
+                <div class="hero-buttons">
+                    <a href="menu.html" class="btn primary">View Menu</a>
+                    <a href="tel:16034378810" class="btn outline">Call (603) 437-8810</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Info Strip -->
+        <section class="info-strip">
+            <div class="container info-strip-inner">
+                <div>
+                    <h3>Visit Us</h3>
+                    <p>29 Indian Rock Rd<br />Windham, NH 03087</p>
+                </div>
+                <div>
+                    <h3>Hours</h3>
+                    <p>Mon–Fri: 6 AM – 7 PM<br />Sat: 6 AM – 7 PM • Sun: 6 AM – 6 PM</p>
+                </div>
+                <div>
+                    <h3>Call</h3>
+                    <p><a href="tel:16034378810">(603) 437-8810</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights -->
+        <section class="section">
+            <div class="container grid-3">
+                <div class="card">
+                    <h2>Donuts & Pastries</h2>
+                    <p>Classic glazed, specialty flavors, and an ever-changing selection of pastries to go with your
+                        morning coffee.</p>
+                    <a href="menu.html#donuts" class="card-link">See donut selection →</a>
+                </div>
+                <div class="card">
+                    <h2>Cakes for Every Occasion</h2>
+                    <p>From simple birthday cakes to custom designs, we bake and decorate to order.</p>
+                    <a href="cakes.html" class="card-link">Learn about custom cakes →</a>
+                </div>
+                <div class="card">
+                    <h2>Local Favorite</h2>
+                    <p>A neighborhood bakery known for friendly service and a big variety of sweets at everyday prices.
+                    </p>
+                    <a href="store.html" class="card-link">Get store details →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery teaser -->
+        <section class="section soft-bg">
+            <div class="container">
+                <h2 class="section-title">A peek at the case</h2>
+                <p class="section-intro">Add your own photos here later – donuts, cakes, and displays.</p>
+                <div class="gallery">
+                    <div class="gallery-item">Photo 1</div>
+                    <div class="gallery-item">Photo 2</div>
+                    <div class="gallery-item">Photo 3</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <h4>Klemm's Bakery</h4>
+                <p>29 Indian Rock Rd, Windham, NH 03087<br />
+                    Phone: <a href="tel:16034378810">(603) 437-8810</a></p>
+            </div>
+            <div>
+                <p class="small">© <span id="year">2025</span> Klemm's Bakery. All rights reserved.</p>
+                <p class="small">
+                    <a href="https://www.facebook.com/klemmsbakery" target="_blank" rel="noopener">Find us on
+                        Facebook</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // simple year update
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
