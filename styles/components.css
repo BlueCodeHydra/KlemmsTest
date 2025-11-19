@@ -1,0 +1,208 @@
+/* ---------- Buttons ---------- */
+
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: 2px solid var(--red);
+    cursor: pointer;
+    background: transparent;
+    transition: all var(--transition-fast);
+}
+
+.hero-buttons .btn {
+    margin-right: 0.75rem;
+}
+
+.btn.primary {
+    background: var(--red);
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background: var(--dark-red);
+    border-color: var(--dark-red);
+    transform: translateY(-2px);
+}
+
+.btn.outline {
+    background: transparent;
+    color: #fff;
+}
+
+.btn.outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ---------- Cards ---------- */
+
+.card {
+    border: 1px solid #eee;
+    border-radius: var(--radius-card);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-soft);
+    background: #fff;
+    transition: all var(--transition-fast);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-strong);
+}
+
+/* Optional card link styling */
+.card a.card-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ---------- Gallery ---------- */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+/* card-style frames that are fully filled by the image */
+.gallery-item {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    padding: 0;
+    /* key: no inner padding */
+    background: #fff;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+/* make images fill the card */
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* crops nicely instead of stretching */
+}
+
+/* hover: gentle zoom */
+.gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    border-color: var(--red);
+}
+
+/* ---------- Menu lists & hours ---------- */
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+}
+
+.menu-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    border-bottom: 1px dashed #eee;
+    padding: 0.35rem 0;
+    font-size: 0.95rem;
+}
+
+.menu-list li span:last-child {
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.hours-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.hours-table td {
+    padding: 0.3rem 0.4rem;
+}
+
+.hours-table tr:nth-child(odd) {
+    background: #fafafa;
+}
+
+/* ---------- Hover/transition polish ---------- */
+
+.main-nav a {
+    transition: all var(--transition-fast);
+}
+
+.main-nav a:hover {
+    opacity: 0.85;
+}
+
+/* subtle parallax shift on hero hover */
+.hero {
+    transition: background-position 1s ease;
+}
+
+.hero:hover {
+    background-position: center 48%;
+}
+
+/* ---------- Section Column Boxes ---------- */
+
+.section .grid-2>div,
+.section .grid-3>div {
+    /* card look */
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 1rem;
+    padding: 1.75rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+
+    /* for bottom-justified footer text/links */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover lift (very subtle, keeps it classy) */
+.section .grid-2>div:hover,
+.section .grid-3>div:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Stronger section headers inside cards */
+.section .grid-2>div h2,
+.section .grid-3>div h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+}
+
+/* Optional subtle underline accent */
+.section .grid-2>div h2::after,
+.section .grid-3>div h2::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--red);
+    margin-top: 0.4rem;
+    border-radius: 2px;
+}
+
+/* Bottom-justify small gray text or final link in each card */
+.section .grid-2>div .small:last-child,
+.section .grid-3>div .small:last-child,
+.section .grid-2>div a:last-child,
+.section .grid-3>div a:last-child {
+    margin-top: auto;
+    padding-top: 1rem;
+    display: block;
+}

@@ -5,7 +5,9 @@
     <meta charset="UTF-8" />
     <title>Klemm's Bakery | Windham, NH</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components.css" />
 </head>
 
 <body>
@@ -15,8 +17,18 @@
                 <span class="logo-main">Klemm's</span>
                 <span class="logo-sub">Bakery</span>
             </a>
+
+            <!-- Mobile hamburger -->
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="nav-toggle-lines">
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                </span>
+            </button>
+
             <nav class="main-nav">
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html">Home</a>
                 <a href="store.html">Store Info</a>
                 <a href="menu.html">Menu</a>
                 <a href="cakes.html">Cakes</a>
@@ -60,7 +72,7 @@
         <section class="section">
             <div class="container grid-3">
                 <div class="card">
-                    <h2>Donuts & Pastries</h2>
+                    <h2>Donuts &amp; Pastries</h2>
                     <p>Classic glazed, specialty flavors, and an ever-changing selection of pastries to go with your
                         morning coffee.</p>
                     <a href="menu.html#donuts" class="card-link">See donut selection →</a>
@@ -79,18 +91,70 @@
             </div>
         </section>
 
-        <!-- Gallery teaser -->
+        <!-- Simple menu preview -->
         <section class="section soft-bg">
-            <div class="container">
-                <h2 class="section-title">A peek at the case</h2>
-                <p class="section-intro">Add your own photos here later – donuts, cakes, and displays.</p>
-                <div class="gallery">
-                    <div class="gallery-item">Photo 1</div>
-                    <div class="gallery-item">Photo 2</div>
-                    <div class="gallery-item">Photo 3</div>
+            <div class="container grid-3">
+                <div>
+                    <h3>Morning Must-Haves</h3>
+                    <ul class="menu-list">
+                        <li><span>Klemm's famous donuts</span><span></span></li>
+                        <li><span>Assorted muffins</span><span></span></li>
+                        <li><span>Danish &amp; scones</span><span></span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Sweet Treats</h3>
+                    <ul class="menu-list">
+                        <li><span>Mini pastries &amp; eclairs</span><span></span></li>
+                        <li><span>Butter &amp; Greek cookies</span><span></span></li>
+                        <li><span>French macarons</span><span></span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Bread &amp; Pies</h3>
+                    <ul class="menu-list">
+                        <li><span>Fresh baked bread &amp; rolls</span><span></span></li>
+                        <li><span>Fruit &amp; cream pies</span><span></span></li>
+                        <li><span>Gluten free treats</span><span></span></li>
+                    </ul>
+                    <p class="small"><a href="menu.html">View the full menu →</a></p>
                 </div>
             </div>
         </section>
+
+        <!-- Gallery teaser -->
+        <section class="section soft-bg">
+            <div class="container">
+                <h2 class="section-title">A Peek at the Case</h2>
+                <p class="section-intro">Fresh donuts, themed cakes, and seasonal favorites — baked daily.</p>
+
+                <div class="gallery">
+                    <div class="gallery-item"><img src="images/donuts_1.png" alt="Donuts 1"></div>
+                    <div class="gallery-item"><img src="images/donuts_2.png" alt="Donuts 2"></div>
+                    <div class="gallery-item"><img src="images/donuts_3.png" alt="Donuts 3"></div>
+
+                    <div class="gallery-item"><img src="images/cake_1.png" alt="Cake"></div>
+                    <div class="gallery-item"><img src="images/bread_1.png" alt="Bread"></div>
+
+                    <div class="gallery-item"><img src="images/easter_1.png" alt="Easter Cake"></div>
+                    <div class="gallery-item"><img src="images/easter_2.png" alt="Easter Treats"></div>
+
+                    <div class="gallery-item"><img src="images/funny_1.png" alt="Funny Cake"></div>
+
+                    <div class="gallery-item"><img src="images/mothersday_1.png" alt="Mother's Day Cake"></div>
+
+                    <div class="gallery-item"><img src="images/strawberries_1.png" alt="Strawberries Cake"></div>
+                    <div class="gallery-item"><img src="images/strawberries_2.png" alt="Strawberries Cake 2"></div>
+
+                    <div class="gallery-item"><img src="images/superbowl_1.png" alt="Super Bowl Cake"></div>
+                    <div class="gallery-item"><img src="images/superbowl_2.png" alt="Super Bowl Cake 2"></div>
+
+                    <div class="gallery-item"><img src="images/valentines_1.png" alt="Valentines Day Cake"></div>
+                    <div class="gallery-item"><img src="images/xmas_1.png" alt="Christmas Cake"></div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="site-footer">
@@ -115,5 +179,20 @@
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
+
+<script>
+    (function () {
+        const header = document.querySelector('.site-header');
+        const toggle = header?.querySelector('.nav-toggle');
+        const nav = header?.querySelector('.main-nav');
+
+        if (!toggle || !nav) return;
+
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('is-open');
+            nav.classList.toggle('is-open');
+        });
+    })();
+</script>
 
 </html>

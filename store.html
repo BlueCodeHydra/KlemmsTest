@@ -5,7 +5,9 @@
     <meta charset="UTF-8" />
     <title>Store Info | Klemm's Bakery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components.css" />
 </head>
 
 <body>
@@ -15,9 +17,19 @@
                 <span class="logo-main">Klemm's</span>
                 <span class="logo-sub">Bakery</span>
             </a>
+
+            <!-- Mobile hamburger -->
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="nav-toggle-lines">
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                </span>
+            </button>
+
             <nav class="main-nav">
                 <a href="index.html">Home</a>
-                <a href="store.html" class="active">Store Info</a>
+                <a href="store.html">Store Info</a>
                 <a href="menu.html">Menu</a>
                 <a href="cakes.html">Cakes</a>
             </nav>
@@ -85,17 +97,13 @@
 
         <section class="section soft-bg">
             <div class="container">
-                <h2>Parking & Seating</h2>
-                <p>Use this section to mention parking, dine-in, takeout, and anything else customers usually ask about.
-                </p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
                 <h2>Map</h2>
-                <p>Add a Google Maps embed here later. For now, customers can search “Klemm's Bakery, Windham NH” in
-                    their map app.</p>
+                <p class="small">Find us in the plaza on Indian Rock Road in Windham, NH.</p>
+                <div style="border-radius: 0.75rem; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+                    <iframe src="https://www.google.com/maps?q=Klemm's%20Bakery%20Windham%20NH&output=embed"
+                        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </section>
     </main>
@@ -104,7 +112,38 @@
         <div class="container footer-inner">
             <div>
                 <h4>Klemm's Bakery</h4>
-                <p>29 Indian Rock Rd, Windham, NH 03087</p>
+                <p>29 Indian Rock Rd, Windham, NH 03087<br />
+                    Phone: <a href="tel:16034378810">(603) 437-8810</a></p>
             </div>
             <div>
-                <p class="small">© <span id="year">2025</span>
+                <p class="small">© <span id="year">2025</span> Klemm's Bakery. All rights reserved.</p>
+                <p class="small">
+                    <a href="https://www.facebook.com/klemmsbakery" target="_blank" rel="noopener">Find us on
+                        Facebook</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // simple year update
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+<script>
+    (function () {
+        const header = document.querySelector('.site-header');
+        const toggle = header?.querySelector('.nav-toggle');
+        const nav = header?.querySelector('.main-nav');
+
+        if (!toggle || !nav) return;
+
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('is-open');
+            nav.classList.toggle('is-open');
+        });
+    })();
+</script>
+
+</html>

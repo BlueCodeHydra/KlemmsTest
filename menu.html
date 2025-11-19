@@ -5,7 +5,9 @@
     <meta charset="UTF-8" />
     <title>Menu | Klemm's Bakery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components.css" />
 </head>
 
 <body>
@@ -15,10 +17,20 @@
                 <span class="logo-main">Klemm's</span>
                 <span class="logo-sub">Bakery</span>
             </a>
+
+            <!-- Mobile hamburger -->
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="nav-toggle-lines">
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                </span>
+            </button>
+
             <nav class="main-nav">
                 <a href="index.html">Home</a>
                 <a href="store.html">Store Info</a>
-                <a href="menu.html" class="active">Menu</a>
+                <a href="menu.html">Menu</a>
                 <a href="cakes.html">Cakes</a>
             </nav>
         </div>
@@ -28,60 +40,167 @@
         <section class="page-hero">
             <div class="container">
                 <h1>Menu</h1>
-                <p>Everyday favorites and classic bakery items.</p>
+                <p>Everyday favorites, breakfast, breads, pies, and more.</p>
             </div>
         </section>
 
+        <!-- Breakfast items -->
         <section class="section" id="donuts">
             <div class="container grid-2">
                 <div>
-                    <h2>Donuts</h2>
+                    <h2>Breakfast Items</h2>
+
+                    <h3>Klemm's Famous Donuts</h3>
+                    <p class="small">Over 40 varieties every day.</p>
                     <ul class="menu-list">
-                        <li><span>Glazed</span><span>$</span></li>
-                        <li><span>Chocolate Frosted</span><span>$</span></li>
-                        <li><span>Boston Creme</span><span>$</span></li>
-                        <li><span>Jelly</span><span>$</span></li>
-                        <li><span>Seasonal Specials</span><span>Ask</span></li>
+                        <li><span>Dozen</span><span>See in-store pricing</span></li>
+                        <li><span>Baker's dozen</span><span>See in-store pricing</span></li>
                     </ul>
-                    <p class="small">Prices may vary. Add exact pricing later.</p>
+
+                    <h3>Muffins</h3>
+                    <p class="small">Blueberry, chocolate chip, cranberry, banana, banana nut and more.</p>
+                    <ul class="menu-list">
+                        <li><span>Assorted muffins (dozen)</span><span>See in-store pricing</span></li>
+                    </ul>
+
+                    <h3>Danish &amp; Scones</h3>
+                    <p class="small">Apple, lemon, raspberry, and seasonal flavors.</p>
+                    <ul class="menu-list">
+                        <li><span>Danish &amp; scones (dozen)</span><span>See in-store pricing</span></li>
+                    </ul>
                 </div>
+
+                <div>
+                    <h2>Hearty Breakfast</h2>
+
+                    <h3>Large Breakfast Items</h3>
+                    <ul class="menu-list">
+                        <li><span>Cinnamon or raspberry sticks</span><span>$3.59&nbsp;ea</span></li>
+                        <li><span>Cinnamon fry</span><span>$3.59&nbsp;ea</span></li>
+                    </ul>
+
+                    <h3>Quiche</h3>
+                    <p class="small">Bacon, sausage, ham, broccoli, asparagus – all made with three cheeses.</p>
+                    <ul class="menu-list">
+                        <li><span>Small quiche</span><span>$14.99</span></li>
+                        <li><span>Large quiche</span><span>$20.99</span></li>
+                    </ul>
+
+                    <h3>Breakfast Sandwich</h3>
+                    <ul class="menu-list">
+                        <li><span>Egg &amp; cheese on hard roll or biscuit</span><span>$3.19</span></li>
+                        <li><span>Add bacon or sausage</span><span>+ $1.39</span></li>
+                        <li><span>On everything bagel</span><span>$3.50</span></li>
+                    </ul>
+
+                    <h3>Turnovers</h3>
+                    <p class="small">Apple, blueberry, strawberry, raspberry.</p>
+                    <ul class="menu-list">
+                        <li><span>Each</span><span>$2.99</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pastries & cookies -->
+        <section class="section soft-bg">
+            <div class="container grid-2">
                 <div>
                     <h2>Pastries</h2>
+
+                    <h3>Mini Pastries</h3>
+                    <p class="small">Includes eclairs, mocha cups, cannoli, napoleons, and assorted cheesecake bites.
+                    </p>
                     <ul class="menu-list">
-                        <li><span>Muffins</span><span>$</span></li>
-                        <li><span>Croissants</span><span>$</span></li>
-                        <li><span>Danish</span><span>$</span></li>
-                        <li><span>Turnovers</span><span>$</span></li>
+                        <li><span>Mini pastry assortment (dozen)</span><span>$12.99</span></li>
                     </ul>
+
+                    <h3>Large Pastries</h3>
+                    <ul class="menu-list">
+                        <li><span>Nut squares</span><span>$1.89&nbsp;ea</span></li>
+                        <li><span>Double raspberry cheese rolls / cinnamon rolls (2
+                                oz.)</span><span>$3.95&nbsp;doz</span></li>
+                        <li><span>Bismarks &amp; whoopie pies</span><span>$2.99&nbsp;ea</span></li>
+                        <li><span>Apple &amp; lemon strudel</span><span>$9.99</span></li>
+                    </ul>
+
+                    <h3>Quarts, TV snacks &amp; assorted treats</h3>
+                    <p class="small">See bakery case for rotating selections.</p>
+                </div>
+
+                <div>
+                    <h2>Cookies &amp; Kuchen</h2>
+
+                    <h3>Cookies</h3>
+                    <ul class="menu-list">
+                        <li><span>Butter cookies</span><span>$9.99 / lb</span></li>
+                        <li><span>Greek cookies</span><span>$9.99 / lb</span></li>
+                        <li><span>Macaroon cookies</span><span>$9.99 / lb</span></li>
+                        <li><span>Decorated cookie men &amp; smile cookies</span><span>$2.29&nbsp;ea</span></li>
+                        <li><span>Cookie platters</span><span>Priced by size</span></li>
+                        <li><span>French macaron cookies</span><span>$2.69&nbsp;ea</span></li>
+                    </ul>
+
+                    <h3>Kuchen</h3>
+                    <p class="small">Raspberry, apple, blueberry, lemon.</p>
+                    <ul class="menu-list">
+                        <li><span>Small</span><span>$7.99</span></li>
+                        <li><span>Large</span><span>$12.99</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bread, pies, gluten-free -->
+        <section class="section">
+            <div class="container grid-2">
+                <div>
+                    <h2>Bread &amp; Rolls</h2>
+                    <ul class="menu-list">
+                        <li><span>White or Vienna</span><span>$4.99</span></li>
+                        <li><span>Oatmeal</span><span>$5.99</span></li>
+                        <li><span>Whole wheat</span><span>$5.99</span></li>
+                        <li><span>Honey wheat</span><span>$5.99</span></li>
+                        <li><span>Italian</span><span>$5.99</span></li>
+                        <li><span>Cinnamon raisin</span><span>$5.99</span></li>
+                        <li><span>Irish soda bread</span><span>$5.99</span></li>
+                        <li><span>Hard crust rolls</span><span>$5.95 / doz</span></li>
+                        <li><span>Hamburger, hot dog &amp; sausage rolls</span><span>$3.95 / doz</span></li>
+                        <li><span>Whole wheat upgrade</span><span>+ $1.10 / doz</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2>Pies &amp; Gluten Free</h2>
+
+                    <h3>Pies</h3>
+                    <p class="small">Available in seasonal and year-round flavors.</p>
+                    <ul class="menu-list">
+                        <li><span>Apple, apricot, blueberry, cherry</span><span></span></li>
+                        <li><span>Custard, lemon meringue, lemon</span><span></span></li>
+                        <li><span>Raspberry, peach, strawberry, rhubarb</span><span></span></li>
+                        <li><span>Banana cream, chocolate cream</span><span></span></li>
+                        <li><span>Key lime, coconut cream</span><span></span></li>
+                    </ul>
+                    <p class="small">Call for today’s flavors and pricing.</p>
+
+                    <h3>Gluten Free</h3>
+                    <ul class="menu-list">
+                        <li><span>Donuts</span><span>$2.99</span></li>
+                        <li><span>Whoopie pies</span><span>$4.49</span></li>
+                        <li><span>Bag of cookies</span><span>$9.99</span></li>
+                        <li><span>Pistachio almond &amp; chocolate chip cookies</span><span>$9.99</span></li>
+                    </ul>
+                    <p class="small">Custom sizes and trays available on order.</p>
                 </div>
             </div>
         </section>
 
         <section class="section soft-bg">
-            <div class="container grid-2">
-                <div>
-                    <h2>Breads & Rolls</h2>
-                    <ul class="menu-list">
-                        <li><span>Fresh Bread Loaves</span><span>$</span></li>
-                        <li><span>Bulkie Rolls</span><span>$</span></li>
-                        <li><span>Dinner Rolls</span><span>$</span></li>
-                    </ul>
-                </div>
-                <div>
-                    <h2>Drinks</h2>
-                    <ul class="menu-list">
-                        <li><span>Coffee</span><span>$</span></li>
-                        <li><span>Tea</span><span>$</span></li>
-                        <li><span>Cold Drinks</span><span>$</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
             <div class="container">
-                <h2>Looking for cakes?</h2>
-                <p>Visit our <a href="cakes.html">cakes page</a> for custom cake options and ideas.</p>
+                <h2>Need a cake?</h2>
+                <p>We bake cakes for birthdays, showers, graduations, weddings, first communions, and every special
+                    occasion. Visit our <a href="cakes.html">cakes page</a> for details and pricing.</p>
             </div>
         </section>
     </main>
@@ -90,15 +209,38 @@
         <div class="container footer-inner">
             <div>
                 <h4>Klemm's Bakery</h4>
+                <p>29 Indian Rock Rd, Windham, NH 03087<br />
+                    Phone: <a href="tel:16034378810">(603) 437-8810</a></p>
             </div>
             <div>
-                <p class="small">© <span id="year">2025</span> Klemm's Bakery.</p>
+                <p class="small">© <span id="year">2025</span> Klemm's Bakery. All rights reserved.</p>
+                <p class="small">
+                    <a href="https://www.facebook.com/klemmsbakery" target="_blank" rel="noopener">Find us on
+                        Facebook</a>
+                </p>
             </div>
         </div>
     </footer>
+
     <script>
+        // simple year update
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
+
+<script>
+    (function () {
+        const header = document.querySelector('.site-header');
+        const toggle = header?.querySelector('.nav-toggle');
+        const nav = header?.querySelector('.main-nav');
+
+        if (!toggle || !nav) return;
+
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('is-open');
+            nav.classList.toggle('is-open');
+        });
+    })();
+</script>
 
 </html>

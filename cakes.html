@@ -5,7 +5,9 @@
     <meta charset="UTF-8" />
     <title>Cakes | Klemm's Bakery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components.css" />
 </head>
 
 <body>
@@ -15,11 +17,21 @@
                 <span class="logo-main">Klemm's</span>
                 <span class="logo-sub">Bakery</span>
             </a>
+
+            <!-- Mobile hamburger -->
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="nav-toggle-lines">
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                </span>
+            </button>
+
             <nav class="main-nav">
                 <a href="index.html">Home</a>
                 <a href="store.html">Store Info</a>
                 <a href="menu.html">Menu</a>
-                <a href="cakes.html" class="active">Cakes</a>
+                <a href="cakes.html">Cakes</a>
             </nav>
         </div>
     </header>
@@ -27,42 +39,75 @@
     <main>
         <section class="page-hero">
             <div class="container">
-                <h1>Cakes & Special Orders</h1>
+                <h1>Cakes &amp; Special Orders</h1>
                 <p>From birthdays to weddings, we’ve got your celebration covered.</p>
             </div>
         </section>
 
+        <!-- Occasions -->
         <section class="section">
             <div class="container grid-2">
                 <div>
-                    <h2>Popular Cake Styles</h2>
+                    <h2>Special Occasion Cakes</h2>
                     <ul class="menu-list">
-                        <li>Birthday cakes</li>
-                        <li>Sheet cakes</li>
-                        <li>Layer cakes</li>
-                        <li>Specialty themed cakes</li>
+                        <li><span>Birthday cakes</span><span></span></li>
+                        <li><span>Baby shower cakes</span><span></span></li>
+                        <li><span>Graduation cakes</span><span></span></li>
+                        <li><span>Wedding cakes</span><span></span></li>
+                        <li><span>First communion cakes</span><span></span></li>
+                        <li><span>All-occasion cakes</span><span></span></li>
+                        <li><span>Custom made cakes</span><span></span></li>
+                        <li><span>Gluten free cake</span><span></span></li>
                     </ul>
+                    <p class="small">Sheet cakes, round layer cakes, and stacked designs available in a range of sizes.
+                        Pricing depends on size and decoration.</p>
                 </div>
                 <div>
-                    <h2>Flavors & Fillings</h2>
-                    <p>Use this section to list common flavors: vanilla, chocolate, marble, red velvet, etc., plus
-                        buttercream, whipped cream, fruit fillings, and more.</p>
+                    <h2>Flavors &amp; Fillings</h2>
+                    <p>Mix and match your favorite combinations.</p>
+                    <ul class="menu-list">
+                        <li><span>Flavors</span><span>Vanilla, chocolate, marble, red velvet, lemon, and more</span>
+                        </li>
+                    </ul>
+                    <ul class="menu-list">
+                        <li><span>Fillings</span><span>Buttercream, whipped cream, fruit, custard, mousse</span></li>
+                    </ul>
+                    <p class="small">Ask about seasonal flavors and specialty fillings.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Everyday cakes & desserts -->
         <section class="section soft-bg">
             <div class="container grid-2">
                 <div>
+                    <h2>Everyday Cakes &amp; Pies</h2>
+                    <ul class="menu-list">
+                        <li><span>Angel cakes</span><span>$14.99</span></li>
+                        <li><span>Jimmy fudge bar</span><span>$14.99</span></li>
+                        <li><span>Gold &amp; chocolate layer cakes</span><span>$18.99</span></li>
+                        <li><span>Boston cream pie</span><span>$12.99</span></li>
+                        <li><span>German chocolate cake</span><span>$12.99</span></li>
+                        <li><span>Carrot cake</span><span>$12.99</span></li>
+                        <li><span>TV dinner cake</span><span>$12.99</span></li>
+                        <li><span>Shadow cakes &amp; assorted cheesecakes</span><span>$12.99+</span></li>
+                        <li><span>Cinnamon pull-apart &amp; Danish rings</span><span>$21.99</span></li>
+                    </ul>
+                    <p class="small">Availability may vary daily. Call ahead if you’re looking for something specific.
+                    </p>
+                </div>
+
+                <div>
                     <h2>How to Order</h2>
                     <p>Call us at <a href="tel:16034378810">(603) 437-8810</a> or stop by the shop to talk through
-                        sizes, flavors, and decorations. For larger or more detailed cakes, we recommend ordering
-                        several days in advance.</p>
-                </div>
-                <div>
-                    <h2>Inspiration Gallery</h2>
-                    <p>Add photos of past cakes here later. For now you can mention that customers can check Facebook
-                        for more examples:</p>
+                        sizes,
+                        flavors, and decorations. For larger or more detailed cakes, we recommend ordering several days
+                        in advance.</p>
+                    <p>For weddings and big events, bring any inspiration photos or colors you’d like us to match.
+                        We’re happy to work with you to design something custom.</p>
+
+                    <h2>See More Ideas</h2>
+                    <p>Browse photos of past cakes and seasonal creations on our Facebook page.</p>
                     <p><a href="https://www.facebook.com/klemmsbakery" target="_blank" rel="noopener">View cakes on
                             Facebook →</a></p>
                 </div>
@@ -74,15 +119,38 @@
         <div class="container footer-inner">
             <div>
                 <h4>Klemm's Bakery</h4>
+                <p>29 Indian Rock Rd, Windham, NH 03087<br />
+                    Phone: <a href="tel:16034378810">(603) 437-8810</a></p>
             </div>
             <div>
-                <p class="small">© <span id="year">2025</span> Klemm's Bakery.</p>
+                <p class="small">© <span id="year">2025</span> Klemm's Bakery. All rights reserved.</p>
+                <p class="small">
+                    <a href="https://www.facebook.com/klemmsbakery" target="_blank" rel="noopener">Find us on
+                        Facebook</a>
+                </p>
             </div>
         </div>
     </footer>
+
     <script>
+        // simple year update
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
+
+<script>
+    (function () {
+        const header = document.querySelector('.site-header');
+        const toggle = header?.querySelector('.nav-toggle');
+        const nav = header?.querySelector('.main-nav');
+
+        if (!toggle || !nav) return;
+
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('is-open');
+            nav.classList.toggle('is-open');
+        });
+    })();
+</script>
 
 </html>
