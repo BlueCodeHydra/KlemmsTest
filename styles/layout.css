@@ -13,8 +13,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 0.75rem 0;
-    position: relative;
-    /* for mobile toggle positioning */
 }
 
 .logo {
@@ -23,6 +21,8 @@
     display: flex;
     flex-direction: column;
     font-weight: 700;
+    padding-left: 0.75rem;
+    /* extra space from left edge */
 }
 
 .logo-main {
@@ -71,49 +71,6 @@
 
 .main-nav a.active {
     color: var(--red);
-}
-
-/* ---------- Hamburger toggle ---------- */
-
-.nav-toggle {
-    display: none;
-    /* shown in mobile only */
-    background: none;
-    border: none;
-    padding: 0.35rem;
-    cursor: pointer;
-}
-
-.nav-toggle:focus-visible {
-    outline: 2px solid var(--red);
-    outline-offset: 3px;
-}
-
-.nav-toggle-lines {
-    display: inline-block;
-}
-
-.nav-toggle-line {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--text-main);
-    margin: 4px 0;
-    border-radius: 2px;
-    transition: transform var(--transition-fast), opacity var(--transition-fast), background var(--transition-fast);
-}
-
-/* "X" animation when open */
-.nav-toggle.is-open .nav-toggle-line:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-}
-
-.nav-toggle.is-open .nav-toggle-line:nth-child(2) {
-    opacity: 0;
-}
-
-.nav-toggle.is-open .nav-toggle-line:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
 }
 
 /* ---------- Hero layout ---------- */
@@ -217,41 +174,26 @@
 
     /* header + nav */
     .header-inner {
-        position: relative;
+        flex-direction: column;
         align-items: center;
-        padding-right: 3.5rem;
-        /* reserve space so logo and toggle don't collide */
+        text-align: center;
+        gap: 0.4rem;
     }
 
-    .nav-toggle {
-        display: block;
-        position: absolute;
-        right: 0.75rem;
-        /* push hamburger to far right */
-        top: 0.55rem;
-        z-index: 50;
+    .logo {
+        padding-left: 0;
+        /* center header on small screens */
     }
 
     .main-nav {
-        position: relative;
-        width: 100%;
-        margin-top: 2.75rem;
-        padding-top: 0.75rem;
-        border-top: 1px solid rgba(0, 0, 0, 0.06);
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.4rem;
-        display: none;
-        /* collapsed by default */
+        margin-top: 0.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
     }
 
     .main-nav a {
         margin-left: 0;
-        font-size: 0.9rem;
-    }
-
-    .main-nav.is-open {
-        display: flex;
     }
 
     /* hero + grids */
@@ -290,7 +232,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
-
 
 @media (max-width: 500px) {
     .section {
