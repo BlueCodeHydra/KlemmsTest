@@ -1,18 +1,21 @@
 /* ---------- Header & navigation ---------- */
 
 .site-header {
-    border-bottom: 3px solid var(--red);
     background: #fff;
     position: sticky;
     top: 0;
     z-index: 20;
 }
 
+/* container already adds side padding; we also put the red line on this,
+   so it matches the content width instead of going full-bleed */
 .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.75rem 0;
+    padding: 0.75rem 1.75rem;
+    /* more breathing room left/right */
+    border-bottom: 3px solid var(--red);
 }
 
 .logo {
@@ -21,8 +24,6 @@
     display: flex;
     flex-direction: column;
     font-weight: 700;
-    padding-left: 0.75rem;
-    /* extra space from left edge */
 }
 
 .logo-main {
@@ -178,11 +179,8 @@
         align-items: center;
         text-align: center;
         gap: 0.4rem;
-    }
-
-    .logo {
-        padding-left: 0;
-        /* center header on small screens */
+        padding: 0.75rem 1.25rem;
+        /* a bit narrower on tiny screens but still padded */
     }
 
     .main-nav {

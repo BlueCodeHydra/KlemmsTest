@@ -171,19 +171,4 @@
     </script>
 </body>
 
-<script>
-    (function () {
-        const header = document.querySelector('.site-header');
-        const toggle = header?.querySelector('.nav-toggle');
-        const nav = header?.querySelector('.main-nav');
-
-        if (!toggle || !nav) return;
-
-        toggle.addEventListener('click', () => {
-            toggle.classList.toggle('is-open');
-            nav.classList.toggle('is-open');
-        });
-    })();
-</script>
-
 </html>
