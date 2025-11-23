@@ -1,250 +1,902 @@
-/* ---------- Header & navigation ---------- */
-
-.site-header {
-    background: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 20;
+:root {
+    --red: #dc2626;
+    --cream: #fefce8;
+    --dark: #111827;
+    --radius-card: 20px;
+    --transition-fast: 0.2s ease;
 }
 
-/* container already adds side padding; we also put the red line on this,
-   so it matches the content width instead of going full-bleed */
-.header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem 1.75rem;
-    /* more breathing room left/right */
-    border-bottom: 3px solid var(--red);
+/* Basic page + typography */
+
+html {
+    scroll-behavior: smooth;
 }
 
-.logo {
-    text-decoration: none;
-    color: var(--text-main);
-    display: flex;
-    flex-direction: column;
-    font-weight: 700;
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    line-height: 1.6;
+    font-size: 1rem;
+    background: var(--cream);
+    color: var(--dark);
+    margin: 0;
+    padding: 0;
 }
 
-.logo-main {
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+/* Utilities */
+
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
 }
 
-.logo-sub {
-    font-size: 0.8rem;
-    color: var(--red);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+.section {
+    padding: 3rem 0;
 }
 
-.main-nav {
-    display: flex;
-    align-items: center;
+.soft-bg {
+    background: #fffdf5;
 }
 
-.main-nav a {
-    margin-left: 1.25rem;
-    text-decoration: none;
-    color: var(--text-main);
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    position: relative;
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
 }
 
-/* underline hover effect */
-.main-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -0.3rem;
-    width: 0;
-    height: 2px;
-    background: var(--red);
-    transition: width var(--transition-fast);
-}
-
-.main-nav a:hover::after,
-.main-nav a.active::after {
-    width: 100%;
-}
-
-.main-nav a.active {
-    color: var(--red);
-}
-
-/* ---------- Hero layout ---------- */
-
-.hero {
-    position: relative;
-    min-height: 60vh;
-    background: linear-gradient(135deg, #9f9f9f, #c3c3c3);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.25));
-}
-
-.hero-content {
-    position: relative;
-    padding: 4rem 0;
-}
-
-.hero h1 {
-    font-size: clamp(2.2rem, 4vw, 3rem);
-    margin-bottom: 0.5rem;
-}
-
-.hero p {
-    font-size: 1.05rem;
-    max-width: 30rem;
+.section-intro {
+    color: #4b5563;
+    max-width: 600px;
     margin-bottom: 1.5rem;
 }
 
-/* ---------- Info strip ---------- */
-
-.info-strip {
-    background: var(--red);
-    color: #fff;
-    padding: 1.5rem 0;
+.text-center {
+    text-align: center;
 }
 
-.info-strip-inner {
+/* Grid layout helpers */
+
+.grid-2 {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
-.info-strip h3 {
-    margin: 0 0 0.2rem;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
-
-.info-strip p {
-    margin: 0;
-    font-size: 0.9rem;
-}
-
-/* make phone link white */
-.info-strip a {
-    color: #fff !important;
-    text-decoration: underline;
-}
-
-/* ---------- Page hero ---------- */
-
-.page-hero {
-    background: var(--bg-soft);
-    padding: 2.5rem 0;
-    border-bottom: 2px solid var(--border-subtle);
-}
-
-.page-hero h1 {
-    margin: 0 0 0.5rem;
-}
-
-/* ---------- Footer ---------- */
-
-.site-footer {
-    border-top: 2px solid var(--border-subtle);
-    padding: 1.5rem 0;
-    background: #fff;
-}
-
-.footer-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-/* ---------- Responsive layout ---------- */
 
 @media (max-width: 900px) {
-
-    /* header + nav */
-    .header-inner {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 0.4rem;
-        padding: 0.75rem 1.25rem;
-        /* a bit narrower on tiny screens but still padded */
-    }
-
-    .main-nav {
-        margin-top: 0.2rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75rem;
-    }
-
-    .main-nav a {
-        margin-left: 0;
-    }
-
-    /* hero + grids */
-    .hero {
-        min-height: 45vh;
-        background-position: center;
-    }
-
-    .hero-content {
-        padding: 2rem 0;
-        text-align: center;
-    }
-
-    .hero p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .info-strip-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 1.5rem;
-    }
 
     .grid-2,
     .grid-3 {
         grid-template-columns: 1fr;
     }
+}
 
-    .footer-inner {
+/* ---------- Header & navigation ---------- */
+
+.site-header {
+    background: var(--red);
+    /* red bar */
+    color: #ffffff;
+    border-bottom: 4px solid #000;
+    /* black underline */
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* Logo styling */
+
+.logo {
+    text-decoration: none;
+    display: inline-flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+/* Main logo text: white with black outline */
+.logo-main {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: clamp(2rem, 2.4vw, 2.4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: #ffffff;
+    text-shadow:
+        -2px -1px 0 #000,
+        2px -1px 0 #000,
+        -2px 1px 0 #000,
+        2px 1px 0 #000;
+}
+
+/* Subtext: white, lighter outline */
+.logo-sub {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-top: 0.2rem;
+    text-shadow: 0 0 2px #000;
+}
+
+/* Desktop navigation */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid transparent;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+    text-shadow: 0 0 2px #000;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+    color: #fffbe8;
+    border-color: #ffffff;
+}
+
+.main-nav a.active {
+    color: #ffffff;
+    border-color: #000;
+    /* subtle black underline for active page */
+}
+
+@media (max-width: 720px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.75rem 0 0.9rem;
+        gap: 0.5rem;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: flex-end;
+        gap: 1rem;
+        flex-wrap: wrap;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        padding-top: 0.4rem;
+        margin-top: 0.4rem;
+    }
+
+    .logo-main {
+        font-size: 1.75rem;
+    }
+}
+
+/* ---------- Home hero / landing layout ---------- */
+
+.hero {
+    position: relative;
+    padding: 2.75rem 0 2.5rem;
+    background: var(--cream);
+}
+
+/* soft red glow overlay */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top right, rgba(220, 38, 38, 0.12), transparent 60%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 720px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 3.1vw, 3rem);
+    line-height: 1.05;
+    margin-bottom: 0.8rem;
+    color: #111827;
+}
+
+.hero p {
+    color: #374151;
+    max-width: 36rem;
+    margin-bottom: 1.25rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        padding-top: 2.25rem;
+    }
+}
+
+/* ---------- Section headers ---------- */
+
+.section-header {
+    margin-bottom: 1.75rem;
+}
+
+.section-header h2 {
+    font-size: clamp(1.6rem, 2.3vw, 2rem);
+    margin: 0;
+    color: #111827;
+}
+
+.section-header p {
+    margin-top: 0.4rem;
+    max-width: 32rem;
+    color: #4b5563;
+}
+
+.section-header.centered {
+    text-align: center;
+}
+
+.section-header.centered p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---------- Specials ---------- */
+
+.specials-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 0;
+    font-size: 0.95rem;
+}
+
+.specials-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+    border-bottom: 1px dashed rgba(209, 213, 219, 0.9);
+}
+
+.specials-list li:last-child {
+    border-bottom: none;
+}
+
+.specials-list span:first-child {
+    font-weight: 500;
+}
+
+/* ---------- Map embed (store page) ---------- */
+
+.map-embed {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(15, 23, 42, 0.15);
+}
+
+.map-embed iframe {
+    display: block;
+    width: 100%;
+    height: 320px;
+    border: 0;
+}
+
+/* ---------- Highlight strip on home (formerly black-section) ---------- */
+
+.black-section {
+    background: linear-gradient(135deg, #7f1d1d, #991b1b);
+    /* deep red */
+    color: #fef2f2;
+    padding: 3rem 0;
+    position: relative;
+}
+
+.black-section .section-header h2 {
+    color: #fef9c3;
+}
+
+.black-section .section-header p {
+    color: #fde68a;
+}
+
+/* subtle highlight at top */
+.black-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top center, rgba(254, 249, 195, 0.2), transparent 65%);
+    opacity: 1;
+    pointer-events: none;
+}
+
+.black-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- Page-hero (Menu / Cakes / Store pages) ---------- */
+
+.page-hero {
+    background: var(--cream);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+    padding: 2.5rem 0 2rem;
+}
+
+.page-hero h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.9rem, 2.4vw, 2.3rem);
+    color: #111827;
+}
+
+.page-hero p {
+    margin: 0;
+    color: #4b5563;
+}
+
+/* ---------- Page-specific max widths ---------- */
+
+.menu-intro,
+.cakes-intro,
+.store-intro {
+    max-width: 40rem;
+}
+
+/* ---------- Responsive tweaks ---------- */
+
+@media (max-width: 640px) {
+    .hero-buttons {
         flex-direction: column;
         align-items: flex-start;
     }
 
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .map-embed iframe {
+        height: 260px;
+    }
+
+    .section {
+        padding: 2.25rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .grid-3 {
+        gap: 1.5rem;
+    }
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: 2px solid var(--red);
+    cursor: pointer;
+    background: transparent;
+    transition: all var(--transition-fast);
+}
+
+.btn.primary {
+    background: var(--red);
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background: #b91c1c;
+    border-color: #b91c1c;
+}
+
+.btn.outline {
+    color: var(--red);
+    background: #fff;
+}
+
+.btn.outline:hover {
+    background: #fff5f5;
+}
+
+.btn.small {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+}
+
+.hero-content .btn {
+    margin-top: 1rem;
+}
+
+/* ---------- Info strip (store hours / phone) ---------- */
+
+.info-strip {
+    background: #fff;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 0.75rem 0;
+}
+
+.info-strip-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+}
+
+.info-strip-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    align-items: center;
+}
+
+.info-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(220, 38, 38, 0.06);
+    border: 1px solid rgba(220, 38, 38, 0.4);
+}
+
+.info-pill strong {
+    font-weight: 600;
+}
+
+.info-strip h3 {
+    margin: 0 0 0.2rem;
+    font-size: 0.95rem;
+}
+
+.info-strip p {
+    margin: 0;
+}
+
+.info-strip a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--red);
+}
+
+.info-strip a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+    .info-strip-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ---------- Generic section cards / grid cards ---------- */
+
+.section .grid-2>div,
+.section .grid-3>div {
+    background: #fff;
+    border-radius: var(--radius-card);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+    color: var(--dark);
+}
+
+/* Card lift on hover */
+.section .grid-2>div:hover,
+.section .grid-3>div:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Decorative red underline for section card titles */
+.section .grid-2>div h2,
+.section .grid-3>div h2 {
+    position: relative;
+    padding-bottom: 0.3rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+}
+
+.section .grid-2>div h2::after,
+.section .grid-3>div h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.3rem;
+    width: 42px;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--red);
+}
+
+.section .grid-2>div p,
+.section .grid-3>div p {
+    margin-bottom: 0.75rem;
+}
+
+.section .grid-2>div p:last-child,
+.section .grid-3>div p:last-child {
+    margin-bottom: 0;
+}
+
+.section .grid-2>div .section-subtitle,
+.section .grid-3>div .section-subtitle {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    color: #9ca3af;
+    margin-bottom: 0.3rem;
+}
+
+/* Ensure bottom links / notes sit at the bottom of cards */
+.section .grid-2>div .small:last-child,
+.section .grid-3>div .small:last-child,
+.section .grid-2>div a:last-child,
+.section .grid-3>div a:last-child {
+    margin-top: auto;
+    padding-top: 1rem;
+    display: block;
+}
+
+/* ---------- Menu page cards ---------- */
+
+.menu-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+    padding: 1.75rem 1.75rem 1.5rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.menu-card h2 {
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: #9f1239;
+}
+
+.menu-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    padding-bottom: 0.4rem;
+}
+
+.menu-card p {
+    margin-bottom: 0.25rem;
+}
+
+/* Pretzel section emphasis */
+.menu-card.pretzels {
+    border-left: 4px solid var(--red);
+}
+
+/* ---------- Cakes page cards ---------- */
+
+.cake-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 1.75rem 1.75rem 1.5rem;
+    box-shadow: 0 20px 34px rgba(15, 23, 42, 0.09);
+    border: 1px solid rgba(15, 23, 42, 0.09);
+}
+
+.cake-card h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #b91c1c;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    padding-bottom: 0.5rem;
+}
+
+.cake-card p {
+    margin-bottom: 0.75rem;
+}
+
+.cake-note {
+    font-size: 0.9rem;
+    color: #4b5563;
+    background: #fff7ed;
+    border-radius: 12px;
+    padding: 0.75rem 0.9rem;
+    border: 1px dashed rgba(180, 83, 9, 0.7);
+}
+
+/* ---------- Store info cards ---------- */
+
+.info-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 1.75rem 1.75rem 1.5rem;
+    box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.info-card h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #b91c1c;
+    margin-bottom: 0.75rem;
+}
+
+.info-card p {
+    margin-bottom: 0.4rem;
+}
+
+/* Hours table on store page */
+.hours-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.hours-table td {
+    padding: 0.25rem 0.4rem 0.25rem 0;
+    border-bottom: 1px dashed rgba(15, 23, 42, 0.08);
+}
+
+.hours-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ---------- Gallery cards on home page ---------- */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.gallery-item {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.14);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
+    transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+/* Real images */
+.gallery-item img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hover effect */
+.gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 40px rgba(15, 23, 42, 0.18);
+}
+
+/* Responsive gallery */
+@media (max-width: 900px) {
     .gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-@media (max-width: 500px) {
-    .section {
-        padding: 2.25rem 0;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero p {
-        font-size: 0.95rem;
-    }
-
+@media (max-width: 640px) {
     .gallery {
         grid-template-columns: 1fr;
+    }
+
+    .gallery-item img {
+        height: 200px;
+    }
+}
+
+/* ---------- Small utility text ---------- */
+
+.small {
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+/* ---------- Hero image placeholder (if used later) ---------- */
+
+.hero-placeholder {
+    background: var(--cream);
+    border-radius: 28px;
+    min-height: 260px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(15, 23, 42, 0.16);
+}
+
+/* ---------- Highlight strip cards (on red background) ---------- */
+
+.black-section .grid-2>div,
+.black-section .grid-3>div {
+    border-color: rgba(15, 23, 42, 0.15);
+    box-shadow: 0 24px 40px rgba(0, 0, 0, 0.35);
+    color: var(--dark);
+    /* force dark text on white cards */
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+    background: var(--red);
+    color: #ffffff;
+    padding: 1.75rem 0;
+    border-top: 4px solid #000;
+    /* match header line */
+}
+
+.site-footer .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.site-footer h4 {
+    margin: 0 0 0.25rem;
+    text-shadow: 0 0 2px #000;
+}
+
+.site-footer a {
+    color: #fffbe8;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-meta {
+    display: flex;
+    gap: 0.5rem 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-credits {
+    opacity: 0.9;
+}
+
+/* On small screens, footer stacks nicely */
+@media (max-width: 640px) {
+    .site-footer .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ---------- Image lightbox (tap-to-expand) ---------- */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    /* hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 60;
+    padding: 1rem;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox-inner {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    background: #ffffff;
+    border-radius: var(--radius-card);
+    box-shadow: 0 24px 40px rgba(0, 0, 0, 0.4);
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox img {
+    display: block;
+    max-width: 100%;
+    max-height: 80vh;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+/* Close button */
+.lightbox-close {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.5rem;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1;
+    border-radius: 999px;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-close:hover {
+    background: #333;
+}
+
+/* On small screens, make sure everything is easy to tap */
+@media (max-width: 600px) {
+    .lightbox-inner {
+        max-width: 100%;
+        padding: 0.5rem;
+    }
+
+    .lightbox img {
+        max-height: 75vh;
+    }
+
+    .lightbox-close {
+        top: 0.35rem;
+        right: 0.35rem;
+        font-size: 1.6rem;
     }
 }

@@ -26,7 +26,6 @@
         </div>
     </header>
 
-
     <main>
         <!-- Hero Section -->
         <section class="hero">
@@ -60,7 +59,7 @@
         </section>
 
         <!-- Highlights -->
-        <section class="section">
+        <section class="section black-section">
             <div class="container grid-3">
                 <div class="card">
                     <h2>Donuts &amp; Pastries</h2>
@@ -142,6 +141,7 @@
 
                     <div class="gallery-item"><img src="images/valentines_1.png" alt="Valentines Day Cake"></div>
                     <div class="gallery-item"><img src="images/xmas_1.png" alt="Christmas Cake"></div>
+
                 </div>
             </div>
         </section>
@@ -169,6 +169,15 @@
         // simple year update
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+
+    <!-- Image lightbox for gallery -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-inner">
+            <button class="lightbox-close" aria-label="Close image">&times;</button>
+            <img src="" alt="Expanded bakery image" id="lightbox-image">
+        </div>
+    </div>
+
 </body>
 
 </html>

@@ -1,109 +1,78 @@
-/* ---------- Root + base ---------- */
 :root {
-    --red: #c81d25;
-    --dark-red: #8d2126;
-    --bg-soft: #fff5f5;
-    --text-main: #222;
-    --text-muted: #666;
-    --border-subtle: #f0d2d2;
-    --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.03);
-    --shadow-strong: 0 14px 30px rgba(0, 0, 0, 0.12);
-    --radius-card: 0.75rem;
-    --max-width: 1100px;
-    --transition-fast: 0.25s ease;
-    --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --red: #dc2626;
+    --cream: #fefce8;
+    --dark: #0f172a;
+    --radius-card: 20px;
+    --transition-fast: 0.2s ease;
 }
 
-/* Reset-ish */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
+/* Basic page + typography */
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    line-height: 1.6;
+    font-size: 1rem;
+    background: var(--cream);
+    color: var(--dark);
     margin: 0;
-    font-family: var(--font-main);
-    color: var(--text-main);
-    background: #ffffff;
-    line-height: 1.5;
+    padding: 0;
 }
 
-/* Basic typography */
-h1,
-h2,
-h3,
-h4 {
-    margin: 0 0 0.5rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-}
-
-p {
-    margin: 0 0 0.75rem;
-}
-
-a {
-    color: var(--red);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* ---------- Layout helpers ---------- */
+/* Utilities */
 
 .container {
-    max-width: var(--max-width);
+    width: min(90%, 1200px);
     margin: 0 auto;
-    padding: 0 1.25rem;
 }
 
 .section {
     padding: 3rem 0;
 }
 
-.section.soft-bg {
-    background: var(--bg-soft);
+.soft-bg {
+    background: #fffdf5;
 }
 
 .section-title {
-    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
     margin-bottom: 1rem;
 }
 
 .section-intro {
+    color: #4b5563;
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+}
+
+.text-center {
     text-align: center;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
 }
 
-.small {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-}
+/* Grid layout helpers */
 
-/* Simple grids used across the site */
 .grid-2 {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
 }
 
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-/* Images */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+@media (max-width: 900px) {
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
 }
