@@ -347,6 +347,14 @@
     white-space: nowrap;
 }
 
+/* Allow wrapping of the right column text in the soft cream cakes section */
+.section.soft-bg .menu-list li span:last-child {
+    white-space: normal;
+    word-break: break-word;
+    /* optional, helps on very narrow screens */
+}
+
+
 /* ----------------------------------
    MAP EMBED (Store page)
 ---------------------------------- */
