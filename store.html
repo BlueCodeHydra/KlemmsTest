@@ -19,15 +19,15 @@
             </a>
             <nav class="main-nav">
                 <a href="index.html">Home</a>
-                <a href="store.html">Store Info</a>
+                <a href="store.html" class="active">Store Info</a>
                 <a href="menu.html">Menu</a>
                 <a href="cakes.html">Cakes</a>
             </nav>
         </div>
     </header>
 
-
     <main>
+        <!-- Hero -->
         <section class="page-hero">
             <div class="container">
                 <h1>Store Information</h1>
@@ -35,6 +35,7 @@
             </div>
         </section>
 
+        <!-- Location + hours -->
         <section class="section">
             <div class="container grid-2">
                 <div>
@@ -46,6 +47,7 @@
                     </p>
                     <p><strong>Phone:</strong> <a href="tel:16034378810">(603) 437-8810</a></p>
                     <p><strong>Price range:</strong> $1 – $10 per person</p>
+                    <p class="small">Plenty of parking available in the plaza lot.</p>
                 </div>
                 <div>
                     <h2>Hours</h2>
@@ -81,19 +83,20 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p class="small">Hours may change on holidays.</p>
+                    <p class="small">Hours may change on holidays. Call ahead for major holidays and storms.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Map -->
         <section class="section soft-bg">
             <div class="container">
                 <h2>Map</h2>
                 <p class="small">Find us in the plaza on Indian Rock Road in Windham, NH.</p>
-                <div style="border-radius: 0.75rem; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+                <div class="map-embed">
                     <iframe src="https://www.google.com/maps?q=Klemm's%20Bakery%20Windham%20NH&output=embed"
-                        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </section>
