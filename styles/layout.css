@@ -342,6 +342,10 @@
     font-weight: 500;
 }
 
+.menu-list li span:last-child {
+    text-align: right;
+    white-space: nowrap;
+}
 
 /* ----------------------------------
    MAP EMBED (Store page)
